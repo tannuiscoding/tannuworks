@@ -1,322 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tannu Choudhary | Portfolio</title>
-  <style>
-    /* Colors inspired by a soft girlie palette */
-    :root {
-      --primary: #ed1b76;
-      --secondary: #f44786;
-      --accent1: #249f9c;
-      --accent2: #037a76;
-      --bg: #fff0f6;
-      --text-dark: #333;
-      --text-light: #555;
-    }
-
-    /* Reset & base */
-    * {
-      box-sizing: border-box;
-      margin: 0; padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text-dark);
-      line-height: 1.6;
-      padding: 1.5rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    a {
-      color: var(--primary);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    a:hover {
-      color: var(--secondary);
-      text-decoration: underline;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    header h1 {
-      font-size: 2.8rem;
-      color: var(--primary);
-      font-weight: 900;
-      margin-bottom: 0.2rem;
-      letter-spacing: 1.5px;
-    }
-
-    header p {
-      font-size: 1rem;
-      color: var(--text-light);
-      margin-bottom: 0.5rem;
-    }
-
-    .social-links a {
-      font-size: 0.9rem;
-      margin: 0 0.5rem;
-      padding: 0.2rem 0.4rem;
-      border-radius: 5px;
-      border: 1.5px solid var(--primary);
-      display: inline-block;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-
-    .social-links a:hover {
-      background: var(--primary);
-      color: white;
-      border-color: var(--secondary);
-    }
-
-    section {
-      margin-bottom: 2.5rem;
-      padding-bottom: 1rem;
-      border-bottom: 2px solid var(--secondary);
-    }
-
-    section:last-child {
-      border-bottom: none;
-    }
-
-    h2 {
-      font-size: 1.8rem;
-      color: var(--primary);
-      margin-bottom: 1rem;
-      font-weight: 700;
-      border-bottom: 2px solid var(--secondary);
-      display: inline-block;
-      padding-bottom: 0.3rem;
-      letter-spacing: 0.03em;
-    }
-
-    /* Lists */
-    ul, li {
-      list-style-type: none;
-    }
-
-    li + li {
-      margin-top: 0.5rem;
-    }
-
-    /* Skill Tags */
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .skill {
-      background: var(--secondary);
-      color: white;
-      padding: 0.3rem 0.8rem;
-      border-radius: 20px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      box-shadow: 0 2px 5px rgba(237,27,118,0.3);
-      user-select: none;
-    }
-
-    /* Experience & Projects style */
-    .item {
-      margin-bottom: 1.2rem;
-    }
-
-    .item h3 {
-      color: var(--accent1);
-      font-size: 1.1rem;
-      margin-bottom: 0.2rem;
-      font-weight: 700;
-    }
-
-    .item .date {
-      font-size: 0.9rem;
-      color: var(--text-light);
-      margin-bottom: 0.4rem;
-      font-style: italic;
-    }
-
-    .item ul {
-      padding-left: 1.1rem;
-      color: var(--text-light);
-      font-size: 0.95rem;
-    }
-
-    /* Certifications and Achievements */
-    .list-inline li {
-      margin-bottom: 0.6rem;
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      body {
-        padding: 1rem;
-        max-width: 100%;
-      }
-
-      .skills-list {
-        justify-content: center;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="light-theme">
+  <div class="theme-toggle">
+    <button id="theme-button">
+      <i class="fas fa-moon"></i>
+    </button>
+  </div>
 
-  <header>
-    <h1>Tannu Choudhary</h1>
-    <p>Delhi, India</p>
-    <p><a href="mailto:tannuchoudhary2000@gmail.com">tannuchoudhary2000@gmail.com</a></p>
-    <div class="social-links" aria-label="Social Media Links">
-      <a href="https://x.com/tanniscoding" target="_blank" rel="noopener">Twitter</a>
-      <a href="https://www.geeksforgeeks.org/user/tchoudhary/" target="_blank" rel="noopener">GeeksforGeeks</a>
-      <a href="https://credly.com/users/tannuiscoding" target="_blank" rel="noopener">Credly</a>
-      <a href="https://linkedin.com/in/tchoudhary1611" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/tannuiscoding" target="_blank" rel="noopener">GitHub</a>
-    </div>
-  </header>
-
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-list" aria-label="Programming skills">
-      <span class="skill">C++</span>
-      <span class="skill">Python</span>
-      <span class="skill">JavaScript</span>
-      <span class="skill">SQL</span>
-      <span class="skill">HTML</span>
-      <span class="skill">CSS</span>
-      <span class="skill">PHP</span>
-      <span class="skill">MySQL</span>
-      <span class="skill">Flask</span>
-      <span class="skill">Django</span>
-      <span class="skill">React</span>
-      <span class="skill">Node.js</span>
-      <span class="skill">Bootstrap</span>
-      <span class="skill">APIs</span>
-      <span class="skill">Git</span>
-      <span class="skill">Docker</span>
-      <span class="skill">Postman</span>
-      <span class="skill">MS Office</span>
-      <span class="skill">TensorFlow</span>
-      <span class="skill">scikit-learn</span>
-    </div>
-  </section>
-
-  <section id="education">
-    <h2>Education</h2>
-    <div class="item">
-      <h3>Indira Gandhi Delhi Technical University for Women (IGDTUW)</h3>
-      <p class="date">Aug 2024 – Present</p>
-      <p>MCA — CGPA: 9.33</p>
-    </div>
-    <div class="item">
-      <h3>Guru Gobind Singh Indraprastha University (GGSIPU)</h3>
-      <p class="date">Aug 2021 – Jul 2024</p>
-      <p>BCA — CGPA: 9.48</p>
-    </div>
-  </section>
-
-  <section id="experience">
-    <h2>Experience</h2>
-
-    <div class="item">
-      <h3>Front-End Developer Intern, IBM</h3>
-      <p class="date">Jun – Aug 2023</p>
-      <ul>
-        <li>Developed a job searching portal using HTML, CSS, and JavaScript.</li>
-        <li>Designed interactive UI components, improving user experience.</li>
-        <li>Optimized responsiveness and accessibility across devices.</li>
-      </ul>
-    </div>
-
-    <div class="item">
-      <h3>Contributor, GirlScript Summer of Code (GSSoC)</h3>
-      <p class="date">Oct – Nov 2024</p>
-      <ul>
-        <li>Contributed to Python-based open-source projects focused on backend and automation.</li>
-        <li>Enhanced existing codebases with new features and performance optimizations.</li>
-      </ul>
-    </div>
-
-    <div class="item">
-      <h3>Freelancer, Upwork</h3>
-      <p class="date">2021 – Present</p>
-      <ul>
-        <li>Built and optimized web applications, integrated APIs for international clients.</li>
-        <li>Maintained 5-star rating and 100% job success across multiple projects.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-
-    <div class="item">
-      <h3><a href="https://investo-glow.vercel.app" target="_blank" rel="noopener">Investo Glow – Stock Trading Platform</a></h3>
-      <p class="date">2024</p>
-      <ul>
-        <li>Built using React.js and Bootstrap; enables real-time stock transactions.</li>
-        <li>Reduced build time from 2 minutes to under 20 seconds through code optimization and caching.</li>
-      </ul>
-    </div>
-
-    <div class="item">
-      <h3><a href="https://go-eco-two.vercel.app" target="_blank" rel="noopener">GoEco – Energy Source Prediction System (TechRush 2.0 Winner)</a></h3>
-      <p class="date">Oct 2024</p>
-      <ul>
-        <li>Predicts optimal energy sources based on location/weather data.</li>
-        <li>Built using Flask and real-time API; modular for IoT integration.</li>
-      </ul>
-    </div>
-
-    <div class="item">
-      <h3><a href="https://huggingface.co/spaces/tannuiscoding/TrueVox" target="_blank" rel="noopener">TrueVoxAI – Speech Emotion Recognition Tool</a></h3>
-      <p class="date">Apr 2025</p>
-      <ul>
-        <li>Detects emotions and transcribes speech using Librosa and NLP.</li>
-        <li>Built with Python, Flask, and Supabase; features multi-emotion support and a clean UI.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="certifications">
-    <h2>Certifications</h2>
-    <ul class="list-inline">
-      <li>C Certificate (NCC) — May 2024</li>
-      <li>Postman API Fundamentals — Apr 2024</li>
-      <li>Social Networks (NPTEL) — Mar 2024</li>
-      <li>Business Analytics with MS Excel (SkillUp) — Nov 2023</li>
-    </ul>
-  </section>
-
-  <section id="achievements">
-    <h2>Achievements</h2>
-    <ul class="list-inline">
-      <li><strong>Winner, TechRush 2.0 (2025):</strong> Secured top position in a state-level hackathon hosted by TechEpoch with the GoEco project.</li>
-      <li><strong>Campus Ambassador, GirlScript Summer of Code (2024):</strong> Promoted open-source contributions and organized workshops.</li>
-      <li>Ranked 139th out of 40,000+ contributors in GirlScript Summer of Code.</li>
-    </ul>
-  </section>
-
-  <section id="articles">
-    <h2>Published Articles</h2>
-    <ul class="list-inline">
-      <li>
-        <a href="https://www.geeksforgeeks.org/benefits-of-latex/?itm_source=auth&itm_medium=contributions&itm_campaign=articles" target="_blank" rel="noopener">
-          Benefits of LaTeX – GeeksforGeeks
+  <div class="container">
+    <header>
+      <div class="profile">
+        <div class="profile-img">
+          <div class="avatar">TC</div>
+        </div>
+        <h1>Tannu Choudhary</h1>
+        <p class="location"><i class="fas fa-map-marker-alt"></i> Delhi, India</p>
+        <p class="email"><a href="mailto:tannuchoudhary2000@gmail.com"><i class="fas fa-envelope"></i> tannuchoudhary2000@gmail.com</a></p>
+      </div>
+      
+      <nav class="social-links">
+        <a href="https://x.com/tanniscoding" target="_blank" rel="noopener" aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
         </a>
-      </li>
-    </ul>
-  </section>
+        <a href="https://www.geeksforgeeks.org/user/tchoudhary/" target="_blank" rel="noopener" aria-label="GeeksforGeeks">
+          <i class="fas fa-code"></i>
+        </a>
+        <a href="https://credly.com/users/tannuiscoding" target="_blank" rel="noopener" aria-label="Credly">
+          <i class="fas fa-certificate"></i>
+        </a>
+        <a href="https://linkedin.com/in/tchoudhary1611" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/tannuiscoding" target="_blank" rel="noopener" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+      </nav>
+    </header>
 
+    <main>
+      <nav class="tab-navigation">
+        <button class="tab-btn active" data-tab="about">About</button>
+        <button class="tab-btn" data-tab="experience">Experience</button>
+        <button class="tab-btn" data-tab="projects">Projects</button>
+        <button class="tab-btn" data-tab="achievements">Achievements</button>
+      </nav>
+
+      <section id="about" class="tab-content active">
+        <div class="section-content">
+          <h2>About Me</h2>
+          <p>I'm a passionate developer with expertise in web development and programming. Currently pursuing my MCA at IGDTUW with a strong academic background.</p>
+          
+          <div class="education">
+            <h3>Education</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <h4>Indira Gandhi Delhi Technical University for Women (IGDTUW)</h4>
+                  <p class="date">Aug 2024 – Present</p>
+                  <p>MCA — CGPA: 9.33</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <h4>Guru Gobind Singh Indraprastha University (GGSIPU)</h4>
+                  <p class="date">Aug 2021 – Jul 2024</p>
+                  <p>BCA — CGPA: 9.48</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="skills">
+            <h3>Skills</h3>
+            <div class="skills-list">
+              <span class="skill">C++</span>
+              <span class="skill">Python</span>
+              <span class="skill">JavaScript</span>
+              <span class="skill">SQL</span>
+              <span class="skill">HTML</span>
+              <span class="skill">CSS</span>
+              <span class="skill">PHP</span>
+              <span class="skill">MySQL</span>
+              <span class="skill">Flask</span>
+              <span class="skill">Django</span>
+              <span class="skill">React</span>
+              <span class="skill">Node.js</span>
+              <span class="skill">Bootstrap</span>
+              <span class="skill">APIs</span>
+              <span class="skill">Git</span>
+              <span class="skill">Docker</span>
+              <span class="skill">Postman</span>
+              <span class="skill">MS Office</span>
+              <span class="skill">TensorFlow</span>
+              <span class="skill">scikit-learn</span>
+            </div>
+          </div>
+          
+          <div class="certifications">
+            <h3>Certifications</h3>
+            <ul>
+              <li><i class="fas fa-award"></i> C Certificate (NCC) — May 2024</li>
+              <li><i class="fas fa-award"></i> Postman API Fundamentals — Apr 2024</li>
+              <li><i class="fas fa-award"></i> Social Networks (NPTEL) — Mar 2024</li>
+              <li><i class="fas fa-award"></i> Business Analytics with MS Excel (SkillUp) — Nov 2023</li>
+            </ul>
+          </div>
+          
+          <div class="articles">
+            <h3>Published Articles</h3>
+            <ul>
+              <li>
+                <a href="https://www.geeksforgeeks.org/benefits-of-latex/?itm_source=auth&itm_medium=contributions&itm_campaign=articles" target="_blank" rel="noopener">
+                  <i class="fas fa-file-alt"></i> Benefits of LaTeX – GeeksforGeeks
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="tab-content">
+        <div class="section-content">
+          <h2>Experience</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>Front-End Developer Intern</h3>
+                <h4>IBM</h4>
+                <p class="date">Jun – Aug 2023</p>
+                <ul>
+                  <li>Developed a job searching portal using HTML, CSS, and JavaScript.</li>
+                  <li>Designed interactive UI components, improving user experience.</li>
+                  <li>Optimized responsiveness and accessibility across devices.</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>Contributor</h3>
+                <h4>GirlScript Summer of Code (GSSoC)</h4>
+                <p class="date">Oct – Nov 2024</p>
+                <ul>
+                  <li>Contributed to Python-based open-source projects focused on backend and automation.</li>
+                  <li>Enhanced existing codebases with new features and performance optimizations.</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>Freelancer</h3>
+                <h4>Upwork</h4>
+                <p class="date">2021 – Present</p>
+                <ul>
+                  <li>Built and optimized web applications, integrated APIs for international clients.</li>
+                  <li>Maintained 5-star rating and 100% job success across multiple projects.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="tab-content">
+        <div class="section-content">
+          <h2>Projects</h2>
+          <div class="projects-grid">
+            <div class="project-card">
+              <div class="project-header">
+                <h3>Investo Glow</h3>
+                <span class="project-year">2024</span>
+              </div>
+              <p class="project-desc">Stock Trading Platform</p>
+              <ul>
+                <li>Built using React.js and Bootstrap; enables real-time stock transactions.</li>
+                <li>Reduced build time from 2 minutes to under 20 seconds through code optimization and caching.</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://investo-glow.vercel.app" target="_blank" rel="noopener" class="project-link">
+                  <i class="fas fa-external-link-alt"></i> View Project
+                </a>
+              </div>
+            </div>
+            
+            <div class="project-card">
+              <div class="project-header">
+                <h3>GoEco</h3>
+                <span class="project-year">Oct 2024</span>
+              </div>
+              <p class="project-desc">Energy Source Prediction System (TechRush 2.0 Winner)</p>
+              <ul>
+                <li>Predicts optimal energy sources based on location/weather data.</li>
+                <li>Built using Flask and real-time API; modular for IoT integration.</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://go-eco-two.vercel.app" target="_blank" rel="noopener" class="project-link">
+                  <i class="fas fa-external-link-alt"></i> View Project
+                </a>
+              </div>
+            </div>
+            
+            <div class="project-card">
+              <div class="project-header">
+                <h3>TrueVoxAI</h3>
+                <span class="project-year">Apr 2025</span>
+              </div>
+              <p class="project-desc">Speech Emotion Recognition Tool</p>
+              <ul>
+                <li>Detects emotions and transcribes speech using Librosa and NLP.</li>
+                <li>Built with Python, Flask, and Supabase; features multi-emotion support and a clean UI.</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://huggingface.co/spaces/tannuiscoding/TrueVox" target="_blank" rel="noopener" class="project-link">
+                  <i class="fas fa-external-link-alt"></i> View Project
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="achievements" class="tab-content">
+        <div class="section-content">
+          <h2>Achievements</h2>
+          <div class="achievements-list">
+            <div class="achievement-item">
+              <div class="achievement-icon">
+                <i class="fas fa-trophy"></i>
+              </div>
+              <div class="achievement-content">
+                <h3>Winner, TechRush 2.0 (2025)</h3>
+                <p>Secured top position in a state-level hackathon hosted by TechEpoch with the GoEco project.</p>
+              </div>
+            </div>
+            
+            <div class="achievement-item">
+              <div class="achievement-icon">
+                <i class="fas fa-user-graduate"></i>
+              </div>
+              <div class="achievement-content">
+                <h3>Campus Ambassador, GirlScript Summer of Code (2024)</h3>
+                <p>Promoted open-source contributions and organized workshops.</p>
+              </div>
+            </div>
+            
+            <div class="achievement-item">
+              <div class="achievement-icon">
+                <i class="fas fa-ranking-star"></i>
+              </div>
+              <div class="achievement-content">
+                <h3>Top Contributor</h3>
+                <p>Ranked 139th out of 40,000+ contributors in GirlScript Summer of Code.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Tannu Choudhary. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
