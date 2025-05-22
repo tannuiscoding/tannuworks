@@ -1,32 +1,32 @@
 /* Variables for light theme */
 :root {
-    --primary: #005ea6;
-    --secondary: #78acfd;
-    --accent: #bbdde9;
-    --background: #f6f7fb;
-    --highlight: #f6d7a8;
+    --primary: #789dbc;
+    --secondary: #ffe3e3;
+    --accent: #c9e9d2;
+    --background: #fef9f2;
+    --highlight: #ffe3e3;
     --text-primary: #333333;
     --text-secondary: #555555;
     --card-bg: #ffffff;
-    --shadow: rgba(0, 94, 166, 0.1);
-    --timeline-line: #78acfd;
-    --skill-bg: #78acfd;
+    --shadow: rgba(120, 157, 188, 0.1);
+    --timeline-line: #789dbc;
+    --skill-bg: #789dbc;
     --skill-text: #ffffff;
   }
   
   /* Variables for dark theme */
   .dark-theme {
-    --primary: #262d6c;
-    --secondary: #3716ae;
-    --accent: #2733a2;
-    --background: #777eb4;
-    --highlight: #bfccd6;
+    --primary: #0c134f;
+    --secondary: #1d267d;
+    --accent: #5c469c;
+    --background: #1d267d;
+    --highlight: #d4adfc;
     --text-primary: #ffffff;
-    --text-secondary: #bfccd6;
-    --card-bg: #262d6c;
+    --text-secondary: #d4adfc;
+    --card-bg: #0c134f;
     --shadow: rgba(0, 0, 0, 0.3);
-    --timeline-line: #3716ae;
-    --skill-bg: #3716ae;
+    --timeline-line: #5c469c;
+    --skill-bg: #5c469c;
     --skill-text: #ffffff;
   }
   
@@ -95,18 +95,13 @@
     margin: 0 auto 1.5rem;
   }
   
+  /* Update avatar styles for profile image */
   .avatar {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    background-color: var(--primary);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin: 0 auto;
+    object-fit: cover;
+    border: 4px solid var(--primary);
     box-shadow: 0 4px 15px var(--shadow);
   }
   
@@ -455,6 +450,42 @@
     padding-top: 2rem;
     color: var(--text-secondary);
     font-size: 0.9rem;
+  }
+  
+  /* Fix text visibility in dark theme */
+  .dark-theme .timeline-content,
+  .dark-theme .project-card,
+  .dark-theme .achievement-item,
+  .dark-theme .section-content {
+    color: var(--text-primary);
+  }
+  
+  .dark-theme p,
+  .dark-theme ul li,
+  .dark-theme .date {
+    color: #d4adfc;
+  }
+  
+  .dark-theme .project-year {
+    color: #ffffff;
+    background-color: #5c469c;
+  }
+  
+  .dark-theme h3 {
+    color: #d4adfc;
+  }
+  
+  .dark-theme h4 {
+    color: #d4adfc;
+  }
+  
+  .dark-theme .tab-btn {
+    color: #d4adfc;
+  }
+  
+  .dark-theme .tab-btn.active {
+    background-color: #5c469c;
+    color: white;
   }
   
   /* Responsive styles */
