@@ -49,6 +49,54 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     })
   
+    // Typewriter effect
+    const typewriterElement = document.getElementById("typewriter")
+    const phrases = [
+      "Full Stack Developer",
+      "Python Enthusiast",
+      "Open Source Contributor",
+      "Web Developer",
+      "Problem Solver",
+    ]
+  
+    let phraseIndex = 0
+    let charIndex = 0
+    let isDeleting = false
+    let typingSpeed = 100
+  
+    function typeWriter() {
+      const currentPhrase = phrases[phraseIndex]
+  
+      if (isDeleting) {
+        // Deleting text
+        typewriterElement.textContent = currentPhrase.substring(0, charIndex - 1)
+        charIndex--
+        typingSpeed = 50 // Faster when deleting
+      } else {
+        // Typing text
+        typewriterElement.textContent = currentPhrase.substring(0, charIndex + 1)
+        charIndex++
+        typingSpeed = 100 // Normal speed when typing
+      }
+  
+      // If word is complete
+      if (!isDeleting && charIndex === currentPhrase.length) {
+        // Pause at the end of typing
+        isDeleting = true
+        typingSpeed = 1500 // Wait before deleting
+      } else if (isDeleting && charIndex === 0) {
+        // Move to next phrase after deleting
+        isDeleting = false
+        phraseIndex = (phraseIndex + 1) % phrases.length
+        typingSpeed = 500 // Pause before typing new phrase
+      }
+  
+      setTimeout(typeWriter, typingSpeed)
+    }
+  
+    // Start the typewriter effect
+    setTimeout(typeWriter, 1000)
+  
     // Add subtle animations for elements when they come into view
     const animateOnScroll = () => {
       const elements = document.querySelectorAll(".timeline-item, .project-card, .achievement-item")
